@@ -1,6 +1,6 @@
 <?php
 // Adjust the breakpoint of the title-bar by adjusting this variable
-$breakpoint = "medium"; ?>
+$breakpoint = "large"; ?>
 
 <div class="title-bar" data-responsive-toggle="top-bar-menu" data-hide-for="<?php echo $breakpoint ?>">
   <button class="menu-icon" type="button" data-toggle></button>
@@ -10,7 +10,7 @@ $breakpoint = "medium"; ?>
 <div class="top-bar" id="top-bar-menu">
 	<div class="top-bar-left show-for-<?php echo $breakpoint ?>">
 		<ul class="menu">
-			<li class="menu-text"><?php bloginfo('name'); ?></li>
+			<li class="site-text"><h3><?php bloginfo('name'); ?></h3></li>
 		</ul>
 	</div>
 	<div class="top-bar-right">

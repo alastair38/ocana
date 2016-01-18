@@ -1,13 +1,22 @@
 <div class="top-bar" id="top-bar-menu">
-	<div class="top-bar-left">
+	<div class="top-bar-left float-left">
 		<ul class="menu">
-			<li class="menu-text"><?php bloginfo('name'); ?></li>
+			<li class="site-text"><h2><a href="<?php bloginfo('url');?>"><?php bloginfo('name'); ?></a></h2></li>
 		</ul>
 	</div>
-	<div class="top-bar-right">
+	<div class="top-bar-right main-menu show-for-large">
+		<?php joints_top_nav(); ?>
+	</div>
+	<div class="top-bar-right float-right show-for-small-only">
 		<ul class="menu">
 			<!-- <li><button class="menu-icon" type="button" data-toggle="off-canvas"></button></li> -->
-			<li><a data-toggle="off-canvas">Menu</a></li>
+			<li class="menu-button"><a data-toggle="off-canvas">MENU</a></li>
+		</ul>
+	</div>
+	<div class="top-bar-right float-right show-for-medium-only">
+		<ul class="menu">
+			<!-- <li><button class="menu-icon" type="button" data-toggle="off-canvas"></button></li> -->
+			<li class="menu-button"><a data-toggle="off-canvas">MENU</a></li>
 		</ul>
 	</div>
 </div>

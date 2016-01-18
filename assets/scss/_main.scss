@@ -11,6 +11,11 @@ GENERAL STYLES
 /*********************
 LINK STYLES
 *********************/
+
+a {
+	color: $highlight-color;
+	transition: color ease 500ms;
+}
 .menu-text a {
 	color: $header-links;
 }
@@ -58,18 +63,83 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 .header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	box-shadow: 1px 1px 3px 0px $light-gray;
+	z-index: 100;
 	ul.off-canvas-list li {
 		list-style: none;
 	}
 }
 
+.site-text h2 {
+	color: $light-gray;
+	text-align: left;
+	padding-left: 1.5em;
+	margin-top: .25em;
+	background: url('https://cdn3.iconfinder.com/data/icons/brain-games/128/Brain-Games.png') no-repeat;
+	background-position: left;
+	background-size: 26px;
+@include breakpoint(medium) {
+	text-align: center;
+	background-size: 40px;
+	padding-left: 1.25em;
+	margin-top: -.1em;
+}
+	a {
+			color: $light-gray;
+			&:hover, &:focus {
+				color: $highlight-color;
+			}
+	}
+
+}
+
+
 /*********************
 NAVIGATION STYLES
 *********************/
 .top-bar {
+	width: 100%;
 	.title-area {
 		z-index: 1;
 	}
+	.main-menu {
+		ul{
+			display: inline-table;
+			width: 100%;
+		}
+	}
+}
+
+li.menu-item a:hover, li.menu-item a:focus {
+	text-decoration: underline;
+	@include breakpoint(large) {
+	color: $light-gray;
+	text-decoration: none;
+	}
+}
+li.menu-item.current-menu-item a
+{
+border-bottom: 1px solid $highlight-color;
+}
+
+li.menu-button {
+	border: 1px solid $light-gray;
+}
+
+.off-canvas-wrapper {
+	background: $light-gray;
+}
+
+.off-canvas .label {
+	background: $primary-color;
+	display: block;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 1.25rem;
 }
 
 .off-canvas-list {
@@ -90,9 +160,21 @@ NAVIGATION STYLES
 POSTS & CONTENT STYLES
 *********************/
 #content {
+	padding-top: 4em;
+	@include breakpoint(medium) {
+		padding-top: 6em;
+	}
+	@include breakpoint(large) {
+		padding-top: 7em;
+	}
 	#inner-content {
 		padding: 1rem 0rem;
 	}
+}
+
+.events .callout {
+	margin-top: 2em;
+	border-left: 8px solid $success-color;
 }
 
 .single-title,
@@ -121,6 +203,37 @@ POSTS & CONTENT STYLES
 .byline {
 	color: #999;
 	time {}
+}
+
+#main {
+		padding-bottom: 1em;
+		margin-bottom: 0em;
+}
+
+.home article h1 {
+		color: $primary-color;
+	@include breakpoint(large) {
+			text-align: center;
+      font-size: 2.5em;
+    }
+	&:after {
+	}
+}
+
+.home .article-header {
+	background: $light-gray;
+	padding: 2em 1em;
+	position: relative;
+	text-align: center;
+	img {
+		width: 20%;
+		padding-bottom: 1em;
+	}
+	.label.front {
+		display: block;
+		color: $primary-color;
+		background: $light-gray;
+	}
 }
 
 // Entry content
@@ -183,6 +296,50 @@ POSTS & CONTENT STYLES
 // Add Foundation styling to password protect button
 .post-password-form input[type="submit"] {
 	@include button;
+}
+
+
+
+.home-links {
+	height: 200px;
+	background: $highlight-color;
+	margin: 1em 0;
+	position: relative;
+	text-align: right;
+	padding-right: 2px;
+	h3 {
+		text-transform: uppercase;
+		text-align: right;
+		border-bottom: 1px solid $medium-gray;
+		a {
+			color: $white;
+			&:hover, &:focus {
+				color: $primary-color;
+			}
+		}
+
+	}
+	h3:after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		text-align: right;
+		font-size: .35em;
+		color: #212121;
+
+	}
+	span {
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0px;
+		color: $primary-color;
+		opacity: .15;
+		font-size: 10rem;
+		z-index: 0;
+	}
 }
 
 /*********************
@@ -501,6 +658,7 @@ SIDEBARS & ASIDES
 FOOTER STYLES
 *********************/
 .footer {
+	text-align: center;
 	clear: both;
 	margin-top: 1em;
 }
