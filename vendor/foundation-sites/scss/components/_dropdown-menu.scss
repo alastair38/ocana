@@ -26,7 +26,6 @@ $dropdown-border: 1px solid $medium-gray !default;
   .dropdown.menu {
     .has-submenu {
       position: relative;
-
       a::after {
         float: right;
         margin-top: 3px;

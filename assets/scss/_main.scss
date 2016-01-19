@@ -5,6 +5,29 @@ Stylesheet: Main Stylesheet
 *************************************************/
 
 /*********************
+ANIMATION
+*********************/
+
+// 'show' applied to main nav to prevent flash of dropdown menus on load
+
+@-webkit-keyframes show {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes show {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes show {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes show {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/*********************
 GENERAL STYLES
 *********************/
 
@@ -110,6 +133,10 @@ NAVIGATION STYLES
 		ul{
 			display: inline-table;
 			width: 100%;
+			-webkit-animation: show 500ms 1; /* Safari 4+ */
+			animation: show 500ms 1;
+			-moz-animation: show 500ms 1;
+			-o-animation: show 500ms 1;
 		}
 	}
 }

@@ -4049,6 +4049,21 @@ Stylesheet: Main Stylesheet
 
 *************************************************/
 /*********************
+ANIMATION
+*********************/
+@-webkit-keyframes show {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes show {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+/*********************
 GENERAL STYLES
 *********************/
 /*********************
@@ -4111,7 +4126,12 @@ NAVIGATION STYLES
     z-index: 1; }
   .top-bar .main-menu ul {
     display: inline-table;
-    width: 100%; }
+    width: 100%;
+    -webkit-animation: show 500ms 1;
+    /* Safari 4+ */
+    animation: show 500ms 1;
+    -moz-animation: show 500ms 1;
+    -o-animation: show 500ms 1; }
 
 li.menu-item a:hover, li.menu-item a:focus {
   text-decoration: underline; }
