@@ -1,7 +1,7 @@
 <div class="top-bar" id="top-bar-menu">
 	<div class="top-bar-left float-left">
 		<ul class="menu">
-			<li class="site-text"><h2><a href="<?php bloginfo('url');?>"><?php bloginfo('name'); ?></a></h2></li>
+			<li class="site-text"><h4><a href="<?php bloginfo('url');?>"><?php bloginfo('description');?></a></h4></li>
 		</ul>
 	</div>
 	<div class="top-bar-right main-menu show-for-large">

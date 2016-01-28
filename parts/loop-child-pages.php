@@ -1,11 +1,7 @@
 <?php
+     // if outside the loop
 
-global $post;     // if outside the loop
 
-if ( is_page() && $post->post_parent ) {
-	 echo "Child page and do child pagey stuff";
-
-} else {
 		// This is a parent so we'll loop through the child pages
 
 $args = array(
@@ -30,4 +26,4 @@ if ( $parent->have_posts() ) : ?>
 		<?php endwhile; ?>
 
 <?php endif; wp_reset_query();
-}?>
+?>

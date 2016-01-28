@@ -3322,7 +3322,7 @@ Foundation.Motion = Motion;
 
     Foundation.registerPlugin(this, 'DropdownMenu');
     Foundation.Keyboard.register('DropdownMenu', {
-      'ENTER': 'open',
+      //'ENTER': 'open',
       'SPACE': 'open',
       'ARROW_RIGHT': 'next',
       'ARROW_UP': 'up',

@@ -70,7 +70,19 @@ require_once(get_template_directory().'/assets/translation/translation.php');
 require_once(get_template_directory().'/assets/functions/custom-post-type.php');
 
 // Customize the WordPress login menu
-// require_once(get_template_directory().'/assets/functions/login.php');
+require_once(get_template_directory().'/assets/functions/login.php');
 
 // Customize the WordPress admin
 // require_once(get_template_directory().'/assets/functions/admin.php');
+
+/* ADD RESOURCE AND NEWS POST TYPES TO THE MAIN QUERY ON AUTHOR AND CATEGORY PAGES */
+
+add_filter( 'pre_get_posts', 'my_get_posts' );
+
+function my_get_posts( $query ) {
+
+	if ( is_author() && $query->is_main_query() || is_category() && $query->is_main_query()  )
+		$query->set( 'post_type', array( 'post', 'resource', 'news' ) );
+
+	return $query;
+}

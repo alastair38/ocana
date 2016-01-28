@@ -31,6 +31,37 @@ ANIMATION
 GENERAL STYLES
 *********************/
 
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+}
+
+.screen-reader-text:focus {
+    background: $primary-color;
+    color: white;
+    box-shadow: none;
+    border-bottom: 0px solid;
+}
+
+.skip-link {
+	font-size:1em;
+    font-weight: normal;
+    font-family: "Questrial", sans-serif;
+    padding: 1em;
+}
+
+.skip-link:focus {
+	clip: auto;
+	height: auto;
+	left: 6px;
+	top: 7px;
+	width: auto;
+	z-index: 100000;
+}
+
 /*********************
 LINK STYLES
 *********************/
@@ -89,30 +120,92 @@ HEADER STYLES
 	position: fixed;
 	top: 0;
 	left: 0;
-	right: 0;
+	right: 0px;
 	box-shadow: 1px 1px 3px 0px $light-gray;
 	z-index: 100;
+  -webkit-animation: show 2000ms 1; /* Safari 4+ */
+  animation: show 2000ms 1;
+  -moz-animation: show 2000ms 1;
+  -o-animation: show 2000ms 1;
 	ul.off-canvas-list li {
 		list-style: none;
 	}
 }
 
-.site-text h2 {
-	color: $light-gray;
+.home .header {
+  -webkit-animation: show 0ms 1; /* Safari 4+ */
+  animation: show 0ms 1;
+  -moz-animation: show 0ms 1;
+  -o-animation: show 0ms 1;
+}
+
+.site-text h4 {
+
 	text-align: left;
-	padding-left: 1.5em;
+  padding-left: 1.5em;
 	margin-top: .25em;
-	background: url('https://cdn3.iconfinder.com/data/icons/brain-games/128/Brain-Games.png') no-repeat;
+	background: url('http://192.168.99.99/pathways/wp-content/uploads/2015/11/BeGOOD-logo_10pc.png') no-repeat;
 	background-position: left;
 	background-size: 26px;
 @include breakpoint(medium) {
 	text-align: center;
-	background-size: 40px;
-	padding-left: 1.25em;
+  padding: .5em 1em .5em 2em;
+	background-size: 70px;
 	margin-top: -.1em;
 }
 	a {
-			color: $light-gray;
+			color: $primary-color;
+			&:hover, &:focus {
+				color: $highlight-color;
+			}
+	}
+
+}
+
+.home .site-text h4 {
+
+	text-align: left;
+  padding-left: 1.5em;
+	margin-top: .25em;
+	background: url('http://192.168.99.99/pathways/wp-content/uploads/2015/11/BeGOOD-logo_10pc.png') no-repeat;
+	background-position: left;
+	background-size: 26px;
+  -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+@include breakpoint(medium) {
+	text-align: center;
+	background-size: 200px;
+  padding: 2.5em 0 2.5em 5.5em;
+	margin-top: -.1em;
+}
+	a {
+			color: $primary-color;
+			&:hover, &:focus {
+				color: $highlight-color;
+			}
+	}
+
+}
+
+.home .site-text.smaller h4 {
+
+	text-align: left;
+  padding-left: 1.5em;
+	margin-top: .25em;
+	background: url('http://192.168.99.99/pathways/wp-content/uploads/2015/11/BeGOOD-logo_10pc.png') no-repeat;
+	background-position: left;
+	background-size: 26px;
+@include breakpoint(medium) {
+	text-align: center;
+  padding: .5em 1em .5em 2em;
+	background-size: 70px;
+	margin-top: -.1em;
+}
+	a {
+			color: $primary-color;
 			&:hover, &:focus {
 				color: $highlight-color;
 			}
@@ -186,6 +279,14 @@ li.menu-button {
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+
+img {
+  -webkit-animation: show 2000ms 1; /* Safari 4+ */
+  animation: show 2000ms 1;
+  -moz-animation: show 2000ms 1;
+  -o-animation: show 2000ms 1;
+}
+
 #content {
 	padding-top: 4em;
 	@include breakpoint(medium) {
@@ -199,9 +300,38 @@ POSTS & CONTENT STYLES
 	}
 }
 
+.home #content {
+  @include breakpoint(large) {
+		padding-top: 8em;
+	}
+}
+
 .events .callout {
 	margin-top: 2em;
 	border-left: 8px solid $success-color;
+}
+
+.latest_posts, .latest_pubs, .latest_links {
+  h5 {
+    text-align: center;
+    background: $light-gray;
+  }
+  article {
+    padding: 1em 0;
+    span {
+      display: block;
+    }
+  }
+}
+
+.latest_videos {
+  h5 {
+    text-align: center;
+    background: $light-gray;
+  }
+  article {
+    padding: 1em;
+  }
 }
 
 .single-title,
@@ -226,6 +356,17 @@ POSTS & CONTENT STYLES
 
 }
 
+li.categories {
+  list-style-type: none;
+  text-align: center;
+  background: $light-gray;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
 // Post meta
 .byline {
 	color: #999;
@@ -247,13 +388,18 @@ POSTS & CONTENT STYLES
 	}
 }
 
+.home .entry-content {
+  padding-top: 2em;
+}
+
 .home .article-header {
 	background: $light-gray;
 	padding: 2em 1em;
 	position: relative;
 	text-align: center;
+  margin-bottom: 2em;
 	img {
-		width: 20%;
+		width: 30%;
 		padding-bottom: 1em;
 	}
 	.label.front {
@@ -264,7 +410,18 @@ POSTS & CONTENT STYLES
 }
 
 // Entry content
+
+.home .entry-content {
+  padding-left: 0;
+  padding-right: 0;
+  @include breakpoint(large) {
+    font-size: 1.25rem;
+    }
+  }
+
 .entry-content {
+  padding-left: 0;
+  padding-right: 0;
 
 	img {
 		max-width: 100%;
@@ -325,15 +482,16 @@ POSTS & CONTENT STYLES
 	@include button;
 }
 
+#projects {
+  background: $secondary-color;
+}
 
-
-.home-links {
-	height: 200px;
+.home-links, .about-links {
 	background: $highlight-color;
 	margin: 1em 0;
 	position: relative;
 	text-align: right;
-	padding-right: 2px;
+	padding: 0 10px;
 	h3 {
 		text-transform: uppercase;
 		text-align: right;
@@ -368,6 +526,99 @@ POSTS & CONTENT STYLES
 		z-index: 0;
 	}
 }
+
+.home-links {
+  height: 200px;
+}
+
+.about-links {
+  min-height: 100px;
+}
+
+
+#parent {
+  background: $alert-color;
+}
+
+.blog hr:last-of-type,
+.category hr:last-of-type,
+.archive hr:last-of-type {
+  display: none;
+}
+
+.carousel {
+  position: relative;
+  div {
+    height: 200px;
+    @include breakpoint(medium) {
+    height: 300px;
+  }
+  @include breakpoint(large) {
+  height: 400px;
+}
+  }
+  article {
+    position: absolute;
+    font-size: .75em;
+    background: rgba(255,255,255,.9);
+    bottom: 2em;
+    left: 1em;
+    padding: 5px;
+    @include breakpoint(medium) {
+    font-size: 1em;
+    }
+
+  }
+}
+
+.slick-dots
+{
+    position: absolute;
+    bottom: -45px;
+
+    display: block;
+
+    width: 100%;
+    padding: 0;
+    margin-left: 0;
+
+    list-style: none;
+
+    text-align: center;
+}
+.slick-dots li
+{
+    position: relative;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+}
+.slick-dots li button
+{
+    font-size: 0;
+    line-height: 0;
+
+    display: block;
+
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    background: $light-gray;
+
+    }
+
+    .slick-dots li.slick-active button
+    {
+      background: $highlight-color;
+    }
 
 /*********************
 IMAGE GALLERY STYLES

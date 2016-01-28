@@ -5,13 +5,19 @@ function site_scripts() {
     // Load What-Input files in footer
     wp_enqueue_script( 'what-input', get_template_directory_uri() . '/vendor/what-input/what-input.min.js', array(), '', true );
 
+    // Load Owl Carousel files in footer
+    wp_enqueue_script( 'owl-carousel', 'http://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js', array('jquery'), '', true );
+
     // Adding Foundation scripts file in the footer
-    wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/assets/js/foundation.min.js', array( 'jquery' ), '6.0', true );
+    wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/assets/js/foundation.js', array( 'jquery' ), '6.0', true );
 
     // Adding scripts file in the footer
     wp_enqueue_script( 'site-js', get_template_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), '', true );
 
     wp_enqueue_style( 'googlefonts', 'http://fonts.googleapis.com/css?family=Questrial');
+
+    // Register main stylesheet
+    wp_enqueue_style( 'owl-css', 'http://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css' );
 
     // Register main stylesheet
     wp_enqueue_style( 'site-css', get_template_directory_uri() . '/assets/css/style.css', array(), '', 'all' );

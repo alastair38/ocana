@@ -37,7 +37,7 @@
 	<!-- Uncomment this line if using the Off-Canvas Menu -->
 
 	<body <?php body_class(); ?>>
-
+    <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyfifteen' ); ?></a>
 		<div class="off-canvas-wrapper">
 
 			<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
