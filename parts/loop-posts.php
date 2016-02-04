@@ -21,6 +21,7 @@
 
 		 <article>
 			 <h4><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h4>
+			 <?php the_post_thumbnail(array(50, 50));?>
 			 <span class="byline">
 			 	Published <time
 			     datetime="<?php the_time('Y-m-d') ?>"

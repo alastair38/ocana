@@ -16,6 +16,8 @@ function site_scripts() {
 
     wp_enqueue_style( 'googlefonts', 'http://fonts.googleapis.com/css?family=Questrial');
 
+    wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+
     // Register main stylesheet
     wp_enqueue_style( 'owl-css', 'http://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css' );
 

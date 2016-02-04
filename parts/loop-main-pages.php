@@ -1,28 +1,31 @@
+<?php $home_id = get_queried_object_id();
+?>
 <div class="large-4 medium-6 columns">
 <div id="projects" class="home-links">
-<h3>Projects</h3>
-<?php echo '<span aria-hidden="true">5</span>';
-echo 'BeGOOD comprises the following five studies';
+<h3><?php the_field('section_name', $home_id);?></h3>
+<?php echo '<span aria-hidden="true">4</span>';
+the_field('section_description', $home_id);
 ?>
 </div>
 </div>
 
 <?php
-	$about = get_page_by_path( 'about' ); // get id for the main blog page to exclude from home page grid
-	// $home_id = get_queried_object_id(); // get id for the home page to exclude from home page grid
-	$mypages = get_pages( array( 'sort_order' => 'desc', 'parent' => 0 ) );
-	$i = 0;
-	foreach( $mypages as $page ) {
-	$children = get_pages( array( 'child_of' => $page->ID ) );
-	$content = $page->post_excerpt;
-	$content = apply_filters( 'the_content', $content );
-	$i++;
-	if($children) {?>
-	<div class="large-4 medium-6 columns">
+	$ids = get_field('home_page_links', false, false);
+
+	$query = new WP_Query(array(
+		'post_type'      	=> 'page',
+		'posts_per_page'	=> 4,
+		'post__in'		=> $ids,
+		'orderby'        	=> 'menu_order',
+	));
+
+	?>
+	<?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
+	<div class="large-4 medium-6 columns end">
 	<div class="home-links <?php echo $page->post_name; ?>">
-	<h3><a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a></h3>
-	<?php echo 'Some content goes here';?></div>
+	<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+	<?php echo the_field('project_description');?></div>
 	</div>
-	<?php }
-	}
-?>
+<?php endwhile; ?>
+<?php endif;?>
+	<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>

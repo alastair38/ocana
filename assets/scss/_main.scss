@@ -144,13 +144,10 @@ HEADER STYLES
 	text-align: left;
   padding-left: 1.5em;
 	margin-top: .25em;
-	background: url('http://192.168.99.99/pathways/wp-content/uploads/2015/11/BeGOOD-logo_10pc.png') no-repeat;
 	background-position: left;
-	background-size: 26px;
 @include breakpoint(medium) {
 	text-align: center;
   padding: .5em 1em .5em 2em;
-	background-size: 70px;
 	margin-top: -.1em;
 }
 	a {
@@ -163,22 +160,25 @@ HEADER STYLES
 }
 
 .home .site-text h4 {
-
 	text-align: left;
-  padding-left: 1.5em;
-	margin-top: .25em;
-	background: url('http://192.168.99.99/pathways/wp-content/uploads/2015/11/BeGOOD-logo_10pc.png') no-repeat;
+
 	background-position: left;
 	background-size: 26px;
-  -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-@include breakpoint(medium) {
+  -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+    -ms-transition: all 0.6s;
+    -o-transition: all 0.6s;
+    transition: all 0.6s;
+    @include breakpoint(medium) {
+    	text-align: center;
+      padding: .5em 1em .5em 2em;
+    	background-size: 70px !important;
+    	margin-top: -.1em;
+    }
+@include breakpoint(large) {
 	text-align: center;
-	background-size: 200px;
-  padding: 2.5em 0 2.5em 5.5em;
+	background-size: 250px !important;
+  padding: 3.5em 0 3.5em 6.5em;
 	margin-top: -.1em;
 }
 	a {
@@ -195,13 +195,12 @@ HEADER STYLES
 	text-align: left;
   padding-left: 1.5em;
 	margin-top: .25em;
-	background: url('http://192.168.99.99/pathways/wp-content/uploads/2015/11/BeGOOD-logo_10pc.png') no-repeat;
 	background-position: left;
 	background-size: 26px;
 @include breakpoint(medium) {
 	text-align: center;
   padding: .5em 1em .5em 2em;
-	background-size: 70px;
+	background-size: 70px !important;
 	margin-top: -.1em;
 }
 	a {
@@ -245,6 +244,8 @@ li.menu-item.current-menu-item a
 {
 border-bottom: 1px solid $highlight-color;
 }
+
+
 
 li.menu-button {
 	border: 1px solid $light-gray;
@@ -318,6 +319,9 @@ img {
   }
   article {
     padding: 1em 0;
+    img {
+      border-radius: 50%;
+    }
     span {
       display: block;
     }
@@ -332,6 +336,15 @@ img {
   article {
     padding: 1em;
   }
+}
+
+.latest_tweets.columns {
+  border: 2px solid $light-gray;
+  padding: 1em 0;
+  margin-bottom: 1em;
+  h5 {
+      display: inline-block;
+    }
 }
 
 .single-title,
@@ -412,16 +425,14 @@ li.categories {
 // Entry content
 
 .home .entry-content {
-  padding-left: 0;
-  padding-right: 0;
+
   @include breakpoint(large) {
     font-size: 1.25rem;
     }
   }
 
-.entry-content {
-  padding-left: 0;
-  padding-right: 0;
+.page-template-page-projects .entry-content {
+padding: 0;
 
 	img {
 		max-width: 100%;
@@ -570,6 +581,35 @@ li.categories {
 
   }
 }
+
+#content .rotatingtweets {
+  border: none;
+}
+
+.rotatingtweet .rtw_main { padding: 10px; background: whitesmoke;}
+
+.rotatingtweet .rtw_meta {padding: 10px;}
+
+/*********************
+SHARE LINK STYLES
+*********************/
+
+ul.share-links {
+  background: $light-gray;
+  text-align: center;
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+  li {
+    display: inline-table;
+    padding-right: 1em;
+  }
+}
+
+
+/*********************
+CAROUSEL STYLES
+*********************/
 
 .slick-dots
 {
@@ -939,6 +979,9 @@ FOOTER STYLES
 	text-align: center;
 	clear: both;
 	margin-top: 1em;
+  i {
+    padding: 0 .25rem;
+  }
 }
 
 /*********************

@@ -4148,14 +4148,11 @@ HEADER STYLES
   text-align: left;
   padding-left: 1.5em;
   margin-top: .25em;
-  background: url("http://192.168.99.99/pathways/wp-content/uploads/2015/11/BeGOOD-logo_10pc.png") no-repeat;
-  background-position: left;
-  background-size: 26px; }
+  background-position: left; }
   @media screen and (min-width: 32em) {
     .site-text h4 {
       text-align: center;
       padding: .5em 1em .5em 2em;
-      background-size: 70px;
       margin-top: -.1em; } }
   .site-text h4 a {
     color: #455A64; }
@@ -4164,17 +4161,20 @@ HEADER STYLES
 
 .home .site-text h4 {
   text-align: left;
-  padding-left: 1.5em;
-  margin-top: .25em;
-  background: url("http://192.168.99.99/pathways/wp-content/uploads/2015/11/BeGOOD-logo_10pc.png") no-repeat;
   background-position: left;
   background-size: 26px;
-  transition: all 0.3s; }
+  transition: all 0.6s; }
   @media screen and (min-width: 32em) {
     .home .site-text h4 {
       text-align: center;
-      background-size: 200px;
-      padding: 2.5em 0 2.5em 5.5em;
+      padding: .5em 1em .5em 2em;
+      background-size: 70px !important;
+      margin-top: -.1em; } }
+  @media screen and (min-width: 64em) {
+    .home .site-text h4 {
+      text-align: center;
+      background-size: 250px !important;
+      padding: 3.5em 0 3.5em 6.5em;
       margin-top: -.1em; } }
   .home .site-text h4 a {
     color: #455A64; }
@@ -4185,14 +4185,13 @@ HEADER STYLES
   text-align: left;
   padding-left: 1.5em;
   margin-top: .25em;
-  background: url("http://192.168.99.99/pathways/wp-content/uploads/2015/11/BeGOOD-logo_10pc.png") no-repeat;
   background-position: left;
   background-size: 26px; }
   @media screen and (min-width: 32em) {
     .home .site-text.smaller h4 {
       text-align: center;
       padding: .5em 1em .5em 2em;
-      background-size: 70px;
+      background-size: 70px !important;
       margin-top: -.1em; } }
   .home .site-text.smaller h4 a {
     color: #455A64; }
@@ -4280,6 +4279,8 @@ img {
 
 .latest_posts article, .latest_pubs article, .latest_links article {
   padding: 1em 0; }
+  .latest_posts article img, .latest_pubs article img, .latest_links article img {
+    border-radius: 50%; }
   .latest_posts article span, .latest_pubs article span, .latest_links article span {
     display: block; }
 
@@ -4289,6 +4290,13 @@ img {
 
 .latest_videos article {
   padding: 1em; }
+
+.latest_tweets.columns {
+  border: 2px solid #e6e6e6;
+  padding: 1em 0;
+  margin-bottom: 1em; }
+  .latest_tweets.columns h5 {
+    display: inline-block; }
 
 .page-title .vcard {
   border: 0px;
@@ -4334,36 +4342,32 @@ li.categories {
     color: #455A64;
     background: #e6e6e6; }
 
-.home .entry-content {
-  padding-left: 0;
-  padding-right: 0; }
-  @media screen and (min-width: 64em) {
-    .home .entry-content {
-      font-size: 1.25rem; } }
+@media screen and (min-width: 64em) {
+  .home .entry-content {
+    font-size: 1.25rem; } }
 
-.entry-content {
-  padding-left: 0;
-  padding-right: 0; }
-  .entry-content img {
+.page-template-page-projects .entry-content {
+  padding: 0; }
+  .page-template-page-projects .entry-content img {
     max-width: 100%;
     height: auto; }
-  .entry-content .alignleft, .entry-content img.alignleft {
+  .page-template-page-projects .entry-content .alignleft, .page-template-page-projects .entry-content img.alignleft {
     margin-right: 1.5em;
     display: inline;
     float: left; }
-  .entry-content .alignright, .entry-content img.alignright {
+  .page-template-page-projects .entry-content .alignright, .page-template-page-projects .entry-content img.alignright {
     margin-left: 1.5em;
     display: inline;
     float: right; }
-  .entry-content .aligncenter, .entry-content img.aligncenter {
+  .page-template-page-projects .entry-content .aligncenter, .page-template-page-projects .entry-content img.aligncenter {
     margin-right: auto;
     margin-left: auto;
     display: block;
     clear: both; }
-  .entry-content video, .entry-content object {
+  .page-template-page-projects .entry-content video, .page-template-page-projects .entry-content object {
     max-width: 100%;
     height: auto; }
-  .entry-content pre {
+  .page-template-page-projects .entry-content pre {
     background: #eee;
     border: 1px solid #cecece;
     padding: 10px; }
@@ -4473,6 +4477,32 @@ li.categories {
       .carousel article {
         font-size: 1em; } }
 
+#content .rotatingtweets {
+  border: none; }
+
+.rotatingtweet .rtw_main {
+  padding: 10px;
+  background: whitesmoke; }
+
+.rotatingtweet .rtw_meta {
+  padding: 10px; }
+
+/*********************
+SHARE LINK STYLES
+*********************/
+ul.share-links {
+  background: #e6e6e6;
+  text-align: center;
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0; }
+  ul.share-links li {
+    display: inline-table;
+    padding-right: 1em; }
+
+/*********************
+CAROUSEL STYLES
+*********************/
 .slick-dots {
   position: absolute;
   bottom: -45px;
@@ -4649,6 +4679,8 @@ FOOTER STYLES
   text-align: center;
   clear: both;
   margin-top: 1em; }
+  .footer i {
+    padding: 0 .25rem; }
 
 /*********************
 FOUNDATION STYLES

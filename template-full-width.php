@@ -11,7 +11,6 @@ Template Name: Full Width (No Sidebar)
 
 			<?php get_template_part( 'parts/loop', 'page-home' ); ?>
 
-			<?php endwhile; endif; ?>
 
 		<div id="inner-content" class="row">
 
@@ -19,9 +18,19 @@ Template Name: Full Width (No Sidebar)
 
 		    <main id="main" class="large-12 medium-12 columns" role="main">
 
+					<section class="entry-content large-12 columns" itemprop="articleBody">
+						<?php the_content(); ?>
+						<?php wp_link_pages(); ?>
+				</section> <!-- end article section -->
+
+			<?php endwhile; endif; ?>
+
+
 				<aside class="large-6 medium-5 columns" role="complementary">
 
-				<?php get_template_part( 'parts/loop', 'posts' ); ?>
+				<?php get_template_part( 'parts/loop', 'posts' );
+
+				?>
 				</aside>
 
 				<aside class="large-6 medium-5 columns" role="complementary">
@@ -34,7 +43,13 @@ Template Name: Full Width (No Sidebar)
 
 		<aside class="large-12 medium-12 columns" role="complementary">
 		<?php get_template_part( 'parts/loop', 'main-pages' ); ?>
+
 	</aside>
+
+
+
+
+
 
 		</div> <!-- end #inner-content -->
 
