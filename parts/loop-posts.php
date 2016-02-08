@@ -11,7 +11,9 @@
 	);
 
 	$lastposts = get_posts( $args );
-	echo '<h5>The Blog</h5>';
+	if ($lastposts) {
+		echo '<h5>The Blog</h5>';
+	}
 	foreach ( $lastposts as $post ) :
 		setup_postdata( $post );
 	// 	$eventDate = DateTime::createFromFormat('Ymd', get_field('event_date'));
@@ -29,11 +31,14 @@
 			     <?=time_ago(get_the_time( 'U' ))?>
 			     </time>
 			 </span>
-			 <?php
-			 $content = get_the_content();
-			 echo wp_trim_words($content, 5);?>
-		 </article>
+			 <p>
+				 <?php
+				$content = get_the_content();
+				echo wp_trim_words($content, 10);?>
+			 </p>
 
+		 </article>
+		 
 	<?php
 
 	endforeach;

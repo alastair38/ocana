@@ -18,7 +18,7 @@ jQuery(document).ready(function() {
   jQuery(window).scroll(function() {
        var scroll = jQuery(window).scrollTop();
 
-       if (scroll >= 300) {
+       if (scroll >= 200) {
            jQuery(".site-text").addClass('smaller');
        } else {
            jQuery(".site-text").removeClass("smaller");

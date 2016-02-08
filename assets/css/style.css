@@ -2161,12 +2161,12 @@ blockquote {
   border-left: 1px solid #cacaca; }
   blockquote, blockquote p {
     line-height: 1.6;
-    color: #8a8a8a; }
+    color: #555; }
 
 cite {
   display: block;
   font-size: 0.8125rem;
-  color: #8a8a8a; }
+  color: #555; }
   cite:before {
     content: '\2014 \0020'; }
 
@@ -2195,7 +2195,7 @@ kbd {
   margin-bottom: 0.5rem;
   font-weight: normal;
   line-height: 1.4;
-  color: #8a8a8a; }
+  color: #555; }
 
 .lead {
   font-size: 125%;
@@ -2445,7 +2445,7 @@ textarea {
   margin: 0 0 1rem;
   font-family: inherit;
   font-size: 1rem;
-  color: #8a8a8a;
+  color: #555;
   background-color: #fefefe;
   box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
   border-radius: 0;
@@ -2454,7 +2454,7 @@ textarea {
   -moz-appearance: none; }
   [type="text"]:focus, [type="password"]:focus, [type="date"]:focus, [type="datetime"]:focus, [type="datetime-local"]:focus, [type="month"]:focus, [type="week"]:focus, [type="email"]:focus, [type="number"]:focus, [type="search"]:focus, [type="tel"]:focus, [type="time"]:focus, [type="url"]:focus, [type="color"]:focus,
   textarea:focus {
-    border: 1px solid #8a8a8a;
+    border: 1px solid #555;
     background: #fefefe;
     outline: none;
     box-shadow: 0 0 5px #cacaca;
@@ -2574,7 +2574,7 @@ select {
   font-size: 1rem;
   font-family: inherit;
   line-height: normal;
-  color: #8a8a8a;
+  color: #555;
   background-color: #fafafa;
   border-radius: 0;
   -webkit-appearance: none;
@@ -2946,7 +2946,7 @@ select {
 
 .close-button {
   position: absolute;
-  color: #8a8a8a;
+  color: #555;
   right: 1rem;
   top: 0.5rem;
   font-size: 2em;
@@ -3425,9 +3425,9 @@ body {
     background-color: #cacaca;
     border-radius: 50%; }
     .orbit-bullets button:hover {
-      background-color: #8a8a8a; }
+      background-color: #555; }
     .orbit-bullets button.is-active {
-      background-color: #8a8a8a; }
+      background-color: #555; }
 
 .pagination {
   margin-left: 0;
@@ -3963,7 +3963,7 @@ table.hover tr:nth-of-type(even):hover {
     box-shadow: 0 7px 0 #666, 0 14px 0 #666; }
 
 .has-tip {
-  border-bottom: dotted 1px #8a8a8a;
+  border-bottom: dotted 1px #555;
   font-weight: bold;
   position: relative;
   display: inline-block; }
@@ -4145,57 +4145,25 @@ HEADER STYLES
   -o-animation: show 0ms 1; }
 
 .site-text h4 {
-  text-align: left;
-  padding-left: 1.5em;
-  margin-top: .25em;
-  background-position: left; }
-  @media screen and (min-width: 32em) {
+  text-align: center;
+  transition: 300ms; }
+  .site-text h4 img {
+    width: 10%; }
+  @media screen and (min-width: 64em) {
     .site-text h4 {
-      text-align: center;
-      padding: .5em 1em .5em 2em;
-      margin-top: -.1em; } }
+      text-align: left; } }
   .site-text h4 a {
     color: #455A64; }
     .site-text h4 a:hover, .site-text h4 a:focus {
       color: #27AAE1; }
 
-.home .site-text h4 {
-  text-align: left;
-  background-position: left;
-  background-size: 26px;
-  transition: all 0.6s; }
-  @media screen and (min-width: 32em) {
-    .home .site-text h4 {
-      text-align: center;
-      padding: .5em 1em .5em 2em;
-      background-size: 70px !important;
-      margin-top: -.1em; } }
-  @media screen and (min-width: 64em) {
-    .home .site-text h4 {
-      text-align: center;
-      background-size: 250px !important;
-      padding: 3.5em 0 3.5em 6.5em;
-      margin-top: -.1em; } }
-  .home .site-text h4 a {
+.site-text.smaller h4 {
+  font-size: 1.25em; }
+  .site-text.smaller h4 img {
+    width: 7%; }
+  .site-text.smaller h4 a {
     color: #455A64; }
-    .home .site-text h4 a:hover, .home .site-text h4 a:focus {
-      color: #27AAE1; }
-
-.home .site-text.smaller h4 {
-  text-align: left;
-  padding-left: 1.5em;
-  margin-top: .25em;
-  background-position: left;
-  background-size: 26px; }
-  @media screen and (min-width: 32em) {
-    .home .site-text.smaller h4 {
-      text-align: center;
-      padding: .5em 1em .5em 2em;
-      background-size: 70px !important;
-      margin-top: -.1em; } }
-  .home .site-text.smaller h4 a {
-    color: #455A64; }
-    .home .site-text.smaller h4 a:hover, .home .site-text.smaller h4 a:focus {
+    .site-text.smaller h4 a:hover, .site-text.smaller h4 a:focus {
       color: #27AAE1; }
 
 /*********************
@@ -4267,11 +4235,16 @@ img {
 
 @media screen and (min-width: 64em) {
   .home #content {
-    padding-top: 8em; } }
+    padding-top: 4.75em; } }
 
-.events .callout {
-  margin-top: 2em;
-  border-left: 8px solid #3adb76; }
+.callout {
+  border-left: 8px solid #455A64;
+  background: #CFD8DC;
+  position: fixed;
+  bottom: 0rem;
+  right: 1rem;
+  width: 30%;
+  z-index: 10; }
 
 .latest_posts h5, .latest_pubs h5, .latest_links h5 {
   text-align: center;
@@ -4281,8 +4254,8 @@ img {
   padding: 1em 0; }
   .latest_posts article img, .latest_pubs article img, .latest_links article img {
     border-radius: 50%; }
-  .latest_posts article span, .latest_pubs article span, .latest_links article span {
-    display: block; }
+  .latest_posts article p, .latest_pubs article p, .latest_links article p {
+    padding-top: 1em; }
 
 .latest_videos h5 {
   text-align: center;
@@ -4317,6 +4290,9 @@ li.categories {
 #main {
   padding-bottom: 1em;
   margin-bottom: 0em; }
+
+.home #main {
+  padding-top: 1em; }
 
 .home article h1 {
   color: #455A64; }
@@ -4472,20 +4448,11 @@ li.categories {
     background: rgba(255, 255, 255, 0.9);
     bottom: 2em;
     left: 1em;
-    padding: 5px; }
+    padding: 5px;
+    max-width: 80%; }
     @media screen and (min-width: 32em) {
       .carousel article {
         font-size: 1em; } }
-
-#content .rotatingtweets {
-  border: none; }
-
-.rotatingtweet .rtw_main {
-  padding: 10px;
-  background: whitesmoke; }
-
-.rotatingtweet .rtw_meta {
-  padding: 10px; }
 
 /*********************
 SHARE LINK STYLES
@@ -4606,7 +4573,10 @@ COMMENT STYLES
   line-height: 1.5em; }
 
 .commentlist .comment-reply-link {
-  float: right; }
+  float: right;
+  border: 1px solid;
+  padding: 0 10px;
+  border-radius: 2px; }
 
 /*********************
 COMMENT FORM STYLES
@@ -4676,9 +4646,16 @@ SIDEBARS & ASIDES
 FOOTER STYLES
 *********************/
 .footer {
+  background: #455A64;
+  color: #fefefe;
   text-align: center;
   clear: both;
+  padding-top: 1em;
   margin-top: 1em; }
+  .footer a {
+    color: #fefefe; }
+    .footer a:hover, .footer a:focus {
+      text-decoration: underline; }
   .footer i {
     padding: 0 .25rem; }
 

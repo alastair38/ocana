@@ -1,27 +1,27 @@
 <?php
 /*
-Template Name: Full Width (No Sidebar)
+Template Name: Front Page (Sidebar)
 */
 ?>
 
 <?php get_header(); ?>
 
 	<div id="content" tabindex="0">
-		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-			<?php get_template_part( 'parts/loop', 'page-home' ); ?>
-
 
 		<div id="inner-content" class="row">
 
-
-
 		    <main id="main" class="large-12 medium-12 columns" role="main">
 
-					<section class="entry-content large-12 columns" itemprop="articleBody">
-						<?php the_content(); ?>
-						<?php wp_link_pages(); ?>
-				</section> <!-- end article section -->
+					<section class="large-9 columns" itemprop="article">
+
+						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+							<?php get_template_part( 'parts/loop', 'page-home' ); ?>
+
+
+
+					</section>
+
 
 
 			<?php endwhile; endif; ?>
@@ -40,14 +40,14 @@ Template Name: Full Width (No Sidebar)
 		}?>
 
 
-				<aside class="large-6 medium-5 columns" role="complementary">
+				<aside class="large-3 medium-3 columns" role="complementary">
 
 				<?php get_template_part( 'parts/loop', 'posts' );
 
 				?>
 				</aside>
 
-				<aside class="large-6 medium-5 columns" role="complementary">
+				<aside class="large-3 medium-3 columns" role="complementary">
 
 				<?php get_template_part( 'parts/loop', 'publications' ); ?>
 				</aside>

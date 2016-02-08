@@ -1,42 +1,48 @@
 <!-- <article id="post-<?php the_ID(); ?>" class="large-12 medium-7 columns" role="article" itemscope itemtype="http://schema.org/WebPage"> -->
 
 	<div class="carousel">
-	
 
-	<div> <img src="https://source.unsplash.com/category/people/1600x900">
+		<?php
+		$post_type = get_field('content_type'); // these custom fields control post_type and post_per_page
+		$items = get_field('items_to_show'); // set the values in the edit screen for the home page
+		$args = array(
+			'posts_per_page' => $item,
+			'post_type' => $post_type,
+			// 'meta_key'=>'event_date',
+			// 'orderby' => 'meta_value',
+			'order' => DESC
+		);
 
-		<article>
-<h3>Hello World</h3>
-	Donec sollicitudin molestie malesuada. Praesent…
-	</article>
-	</div>
-	<div> <img src="https://source.unsplash.com/category/nature/1600x900">
-		<article>
-	<h3>Second Blog Post</h3>
-	Donec sollicitudin molestie malesuada. Praesent…
-	</article>
+		$slider_posts = get_posts( $args );
+		foreach ( $slider_posts as $post ) :
+			setup_postdata( $post );
+			$thumb_id = get_post_thumbnail_id();
+			$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+			$thumb_url = $thumb_url_array[0];
+		// 	$eventDate = DateTime::createFromFormat('Ymd', get_field('event_date'));
+		// 	$currentDate = new DateTime();
+		// // this should only show an event if the event_date is either today or in the future
+		// 	if ( $eventDate >= $currentDate ) : ?>
+		<div style="background: url(<?php echo $thumb_url;?>) no-repeat; background-size: cover;">
+
+			 <article>
+				 <h3><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
+				 <span class="byline">
+				 	Published <time
+				     datetime="<?php the_time('Y-m-d') ?>"
+				     title="<?php the_time('F j, Y') ?>">
+				     <?=time_ago(get_the_time( 'U' ))?>
+				     </time>
+				 </span><br />
+				 <?php
+				 $content = get_the_content();
+				 echo wp_trim_words($content, 10);?>
+			 </article>
+		</div>
+
+		<?php
+
+		endforeach;
+		wp_reset_postdata(); ?>
+
 </div>
-	<div> <img src="https://source.unsplash.com/category/technology/1600x900">
-		<article>
-<h3>Another Post</h3>
-	Donec sollicitudin molestie malesuada. Praesent…
-	</article>
-	</div>
-</div>
-<!--
-	<header class="article-header large-12 columns">
-		<?php $aboutObj = get_page_by_path( 'about' );?>
-		<h1 class="page-title"><a href="<?php echo $aboutObj->guid; ?>"><?php the_title(); ?></a></h1>
-
-		<?php the_post_thumbnail('full');
-		if ( is_front_page() ) {?>
-		<span class="front label"><?php bloginfo('description');?></span>
-	<?php } else {}?>
-	</header> <!-- end article header -->
-
-
-	<footer class="article-footer">
-
-	</footer> <!-- end article footer -->
-
-<!-- </article> <!-- end article -->

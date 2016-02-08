@@ -20,7 +20,9 @@
 	);
 
 	$lastpublications = get_posts( $args );
-	echo '<h5>Latest Publications</h5>';
+	if ($lastpublications) {
+		echo '<h5>Latest Publications</h5>';
+	}
 	foreach ( $lastpublications as $post ) :
 		setup_postdata( $post );
 	// 	$eventDate = DateTime::createFromFormat('Ymd', get_field('event_date'));

@@ -1,16 +1,9 @@
 <?php $home_id = get_queried_object_id();
 ?>
-<div class="large-4 medium-6 columns">
-<div id="projects" class="home-links">
-<h3><?php the_field('section_name', $home_id);?></h3>
-<?php echo '<span aria-hidden="true">4</span>';
-the_field('section_description', $home_id);
-?>
-</div>
-</div>
+
 
 <?php
-	$ids = get_field('home_page_links', false, false);
+	$ids = get_field('front_pages', false, false);
 
 	$query = new WP_Query(array(
 		'post_type'      	=> 'page',

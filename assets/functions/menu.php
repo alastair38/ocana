@@ -96,8 +96,8 @@ function add_logout_link( $items, $args )
         {
 						$items .= '<li class="has-submenu is-dropdown-submenu-parent"><a href="#">Add Content</a><ul class="menu submenu is-dropdown-submenu first-sub vertical">';
             $items .= '<li><a href="' . admin_url() . 'post-new.php">Add Blog Post</a></li>';
-            $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=resource">Add Resource</a></li>';
-            $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=news">Add News Report</a></li>';
+            // $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=resource">Add Resource</a></li>';
+            // $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=news">Add News Report</a></li>';
             $items .= '<li><a href="'. get_edit_user_link() .'">Edit Profile</a></li></ul></li>';
             $items .= '<li class="logout"><a href="'. wp_logout_url(home_url()) .'">Log Out</a></li>';
         }

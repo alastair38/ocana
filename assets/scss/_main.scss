@@ -140,46 +140,13 @@ HEADER STYLES
 }
 
 .site-text h4 {
-
-	text-align: left;
-  padding-left: 1.5em;
-	margin-top: .25em;
-	background-position: left;
-@include breakpoint(medium) {
 	text-align: center;
-  padding: .5em 1em .5em 2em;
-	margin-top: -.1em;
-}
-	a {
-			color: $primary-color;
-			&:hover, &:focus {
-				color: $highlight-color;
-			}
-	}
-
-}
-
-.home .site-text h4 {
-	text-align: left;
-
-	background-position: left;
-	background-size: 26px;
-  -webkit-transition: all 0.6s;
-    -moz-transition: all 0.6s;
-    -ms-transition: all 0.6s;
-    -o-transition: all 0.6s;
-    transition: all 0.6s;
-    @include breakpoint(medium) {
-    	text-align: center;
-      padding: .5em 1em .5em 2em;
-    	background-size: 70px !important;
-    	margin-top: -.1em;
-    }
+  transition: 300ms;
+  img {
+    width: 10%;
+  }
 @include breakpoint(large) {
-	text-align: center;
-	background-size: 250px !important;
-  padding: 3.5em 0 3.5em 6.5em;
-	margin-top: -.1em;
+text-align: left;
 }
 	a {
 			color: $primary-color;
@@ -190,18 +157,14 @@ HEADER STYLES
 
 }
 
-.home .site-text.smaller h4 {
 
-	text-align: left;
-  padding-left: 1.5em;
-	margin-top: .25em;
-	background-position: left;
-	background-size: 26px;
+.site-text.smaller h4 {
+  font-size: 1.25em;
+  img {
+    width: 7%;
+  }
 @include breakpoint(medium) {
-	text-align: center;
-  padding: .5em 1em .5em 2em;
-	background-size: 70px !important;
-	margin-top: -.1em;
+
 }
 	a {
 			color: $primary-color;
@@ -302,14 +265,22 @@ img {
 }
 
 .home #content {
-  @include breakpoint(large) {
-		padding-top: 8em;
+	@include breakpoint(large) {
+		padding-top: 4.75em;
 	}
+
 }
 
-.events .callout {
-	margin-top: 2em;
-	border-left: 8px solid $success-color;
+
+
+.callout {
+	border-left: 8px solid $primary-color;
+  background: $secondary-color;
+  position: fixed;
+  bottom: 0rem;
+  right: 1rem;
+  width: 30%;
+  z-index: 10;
 }
 
 .latest_posts, .latest_pubs, .latest_links {
@@ -322,8 +293,8 @@ img {
     img {
       border-radius: 50%;
     }
-    span {
-      display: block;
+    p {
+      padding-top: 1em;
     }
   }
 }
@@ -387,8 +358,12 @@ li.categories {
 }
 
 #main {
-		padding-bottom: 1em;
+    padding-bottom: 1em;
 		margin-bottom: 0em;
+}
+
+.home #main {
+  padding-top: 1em;
 }
 
 .home article h1 {
@@ -575,6 +550,7 @@ padding: 0;
     bottom: 2em;
     left: 1em;
     padding: 5px;
+    max-width: 80%;
     @include breakpoint(medium) {
     font-size: 1em;
     }
@@ -582,13 +558,7 @@ padding: 0;
   }
 }
 
-#content .rotatingtweets {
-  border: none;
-}
 
-.rotatingtweet .rtw_main { padding: 10px; background: whitesmoke;}
-
-.rotatingtweet .rtw_meta {padding: 10px;}
 
 /*********************
 SHARE LINK STYLES
@@ -843,6 +813,9 @@ COMMENT STYLES
 	// comment reply link
 	.comment-reply-link {
 		float: right;
+    border: 1px solid;
+    padding: 0 10px;
+    border-radius: 2px;
 
 		&:hover,
 		&:focus {
@@ -976,9 +949,18 @@ SIDEBARS & ASIDES
 FOOTER STYLES
 *********************/
 .footer {
+  background: $primary-color;
+  color: $white;
 	text-align: center;
 	clear: both;
+  padding-top: 1em;
 	margin-top: 1em;
+  a {
+    color: $white;
+    &:hover, &:focus {
+      text-decoration: underline;
+    }
+  }
   i {
     padding: 0 .25rem;
   }
